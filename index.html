@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Hotel Trois Amours — You're Invited</title>
+<meta name="description" content="You're invited to a murder mystery night at L'Hotel Trois Amours.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="velvet-texture" aria-hidden="true"></div>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About Us</a>
+</nav>
+
+<main>
+  <img class="crest" src="assets/logo.svg" alt="L'Hotel Trois Amours crest, three roses in gold outline">
+
+  <p class="eyebrow">L'HOTEL TROIS AMOURS</p>
+  <hr class="rule">
+
+  <p class="kicker">You're invited for a<br>night at</p>
+  <h1 class="hotel-name">L'Hotel<br>Trois&nbsp;Amours</h1>
+
+  <p class="tagline">A murder mystery is brewing,<br>and we need your help to solve it.</p>
+
+  <div class="details">
+    <div class="detail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+      <span><strong>December 4th</strong>8:00 PM – 12:00 AM</span>
+    </div>
+    <div class="detail-divider" aria-hidden="true"></div>
+    <div class="detail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+      <span><strong>55 Broad St, Apt 416</strong>New York, NY 10004</span>
+    </div>
+  </div>
+
+  <section class="rsvp" aria-labelledby="rsvp-heading">
+    <div class="rsvp-heading"><span id="rsvp-heading">RSVP</span></div>
+    <form class="rsvp-form" id="rsvpForm">
+      <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
+      <button type="submit">RSVP</button>
+    </form>
+    <p class="rsvp-note" id="rsvpNote" role="status" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer>L'HOTEL TROIS AMOURS &middot; DECEMBER 4, 2026</footer>
+
+<script>
+  const form = document.getElementById('rsvpForm');
+  const note = document.getElementById('rsvpNote');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = form.elements['name'].value.trim();
+    if (!name) return;
+    note.textContent = `We can't wait to see you, ${name}. Details to follow.`;
+    note.classList.add('confirmed');
+    form.reset();
+  });
+</script>
+</body>
+</html>
